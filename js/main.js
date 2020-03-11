@@ -1,22 +1,14 @@
 $(document).ready(function () {
-  // $('.slideUp').click(function () {
-  //   $('.element').slideUp(2000, function () {
-  //     alert(done)
-  //   })
-  // })
-
-  // $('.slideDown').click(function () {
-  //   $('.element').slideDown(2000, function () {
-  //     alert(done)
-  //   })
-  // })
-
-  $('.slideUp,.slideDown').click(function () {
-    $('.element').slideToggle('slow', function () {//no slideto
-      alert('done')
-    })
+  $('.element').click(function () {
+    $(this).animate({
+      left: '200px',
+      top: '50px',
+      width: '100px',
+      height: '100px',
+      fontSize: '3em',
+      opacity: '0.2'
+    },2000)
   })
-
 
 })
 
