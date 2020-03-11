@@ -1,20 +1,25 @@
 $(document).ready(function () {
 
-  //need second library because jquery doesn't include it, jquery UI
-  //toggle needed library at jquery UI download page
-  //or use jquery UI cdn
-
-  // $('.element').hover(function () {
-  //   $(this).animate({ left: '100px' }, 'slow')
-  // }, function () {
-  //   $(this).animate({ left: '0px' }, 'slow') //not use in real because when you hover , animate will run unexpectedly
+  // $('.square.one').animate({ marginLeft: '+=400' }, 1000, function () {
+  //   $('.square.two').animate({ marginLeft: '+=400px' }, 1000, function () {
+  //     $('.square.three').animate({ marginLeft: '+=400' }, 1000)
+  //   })
   // })
+  //class = square one = .square.one
 
-  $('.element').hover(function () {
-    $(this).stop().animate({ left: '100px' }, 'slow')
-  }, function () {
-    $(this).stop().animate({ left: '0px' }, 'slow') //stop the queque animation
+  $('.square.one').animate({ marginLeft: '+=400' }, 1000, function () {
+
   })
+
+  $('.square.two').delay(200).animate({ marginLeft: '+=400' }, 1000, function () {
+
+  })
+
+  $('.square.three').delay(500).animate({ marginLeft: '+=400' }, 1000, function () {
+
+  })
+
+  //for animation jquery good , but not the best
 })
 
 
