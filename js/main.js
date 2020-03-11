@@ -1,30 +1,22 @@
 $(document).ready(function () {
-
-  // $('form').submit(function (e) {
-  //   e.preventDefault();
-
-  //   console.log('not auto reloading')
+  // $('.hide').click(function () {
+  //   $('.element').hide(2000, function () {
+  //     alert('done')
+  //   })
   // })
 
-  // $('input').change(function (e) {
-  //   console.log('input changed')
+  // $('.show').click(function () {
+  //   $('.element').show()
   // })
 
-  // $('select').change(function (e) {
-  //   console.log($(this).val())
-  // })
 
-  $('input[type="checkbox"').change(function (e) {
-    // var element = $(this).val();
-    var checked = $(this).is(':checked')
-    if (checked) {
-      console.log($(this).val() + ' is checked')
-    } else {
-      console.log($(this).val() + ' is not checked')
-    }
-
-
-    // console.log(element)
+  $('.hide,.show').click(function () {
+    //toggle visible or not visible
+    // $('.element').toggle(2000, function () {
+    // $('.element').toggle('slow', function () {
+    $('.element').toggle('fast', function () {
+      alert('done')
+    })
   })
 
 })
