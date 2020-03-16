@@ -1,11 +1,14 @@
 $(document).ready(function () {
 
-  $('.template').load('/template/template.html #codeToAppend',function(){//spesific
-    console.log('done execute')
+  $.ajax('https://jsonplaceholder.typicode.com/posts', {
+    method: 'GET',
+    error: function () {
+      console.log('error bro')
+    },
+    success: function (data) { //save data from server to argument data
+      console.log(data)
+    }
   })
-
-
-  /// next code will not run if synchronous
 
 })
 
