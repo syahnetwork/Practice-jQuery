@@ -1,25 +1,12 @@
 $(document).ready(function () {
 
-  // $('.square.one').animate({ marginLeft: '+=400' }, 1000, function () {
-  //   $('.square.two').animate({ marginLeft: '+=400px' }, 1000, function () {
-  //     $('.square.three').animate({ marginLeft: '+=400' }, 1000)
-  //   })
-  // })
-  //class = square one = .square.one
-
-  $('.square.one').animate({ marginLeft: '+=400' }, 1000, function () {
-
+  $('.template').load('/template/template.html #codeToAppend',function(){//spesific
+    console.log('done execute')
   })
 
-  $('.square.two').delay(200).animate({ marginLeft: '+=400' }, 1000, function () {
 
-  })
+  /// next code will not run if synchronous
 
-  $('.square.three').delay(500).animate({ marginLeft: '+=400' }, 1000, function () {
-
-  })
-
-  //for animation jquery good , but not the best
 })
 
 
