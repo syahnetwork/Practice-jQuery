@@ -1,33 +1,45 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Form Events</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/main.js"></script>
   </head>
-
   <body>
-    <form action="">
-      <input type="text" placeholder="enter name" /><br /><br />
-      <input type="text" placeholder="enter car model" /><br><br>
-
-
-      <select name="" id="" class="target">
-        <option value="option1" selected>Option1</option>
-        <option value="option2">Option2</option>
-      </select><br><br>
-
-      <input type="checkbox" name="vehicle" value="bus">I have a bus <br>
-      <input type="checkbox" name="vehicle" value="car">I have a car <br><br>
-
-      <button type="submit">Submit</button>
-      <a href=""></a>
-
-    </form>
+    <div id="awesome_tab">
+      <div class="tab_header">
+        <div class="item active" data-option="1">Option 1</div>
+        <div class="item" data-option="2">Option 2</div>
+        <div class="item" data-option="3">Option 3</div>
+      </div>
+      <div class="tab_container">
+        <div class="container_item active" data-item="1">
+          At vero eos et accusamus et iusto odio dignissimos ducimus qui
+          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+          et quas molestias excepturi sint occaecati cupiditate non provident,
+        </div>
+        <div class="container_item" data-item="2">
+          similique sunt in culpa qui officia deserunt mollitia animi, id est
+          laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
+          distinctio.
+        </div>
+        <div class="container_item" data-item="3">
+          Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+          impedit quo minus id quod maxime placeat facere possimus, omnis
+          voluptas assumenda est
+        </div>
+      </div>
+    </div>
   </body>
 </html>

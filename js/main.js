@@ -1,35 +1,15 @@
+
+
 $(document).ready(function () {
+  $('.tab_header .item').on('click', function () {
+    var number = $(this).data('option');
 
-  // $('form').submit(function (e) {
-  //   e.preventDefault();
+    // console.log(number)
+gi
+    $('.tab_header .item').removeClass('active');
+    $(this).addClass('active');
 
-  //   console.log('not auto reloading')
-  // })
-
-  // $('input').change(function (e) {
-  //   console.log('input changed')
-  // })
-
-  // $('select').change(function (e) {
-  //   console.log($(this).val())
-  // })
-
-  $('input[type="checkbox"').change(function (e) {
-    // var element = $(this).val();
-    var checked = $(this).is(':checked')
-    if (checked) {
-      console.log($(this).val() + ' is checked')
-    } else {
-      console.log($(this).val() + ' is not checked')
-    }
-
-
-    // console.log(element)
+    $('.tab_container .container_item').hide()
+    $('div[data-item="' + number + '"]').show()
   })
-
-})
-
-
-
-
-
+});
