@@ -1,35 +1,46 @@
 $(document).ready(function () {
 
-  // $('form').submit(function (e) {
-  //   e.preventDefault();
+  // setTimeout(function () {
+  //   showSlide(3)
+  // }, 2000)
 
-  //   console.log('not auto reloading')
-  // })
+  var itemsLength = $('.cards_container .item').length
+  var currentSlide = 1;
 
-  // $('input').change(function (e) {
-  //   console.log('input changed')
-  // })
+  $('.total_slide').text(itemsLength);
+  $('.current_slide').text(currentSlide)
 
-  // $('select').change(function (e) {
-  //   console.log($(this).val())
-  // })
 
-  $('input[type="checkbox"').change(function (e) {
-    // var element = $(this).val();
-    var checked = $(this).is(':checked')
-    if (checked) {
-      console.log($(this).val() + ' is checked')
+  // console.log(itemsLength)
+
+  $('.cardSlider .btn_prev').on('click', function () {
+    // console.log('prev')
+    if (currentSlide > 1) {
+      currentSlide = currentSlide - 1;
+      showSlide(currentSlide)
     } else {
-      console.log($(this).val() + ' is not checked')
+      currentSlide = itemsLength;
+      showSlide(currentSlide);
     }
-
-
-    // console.log(element)
   })
 
-})
+  $('.cardSlider .btn_next').on('click', function () {
+    // console.log('next')
+    if (currentSlide !== itemsLength) {
+      currentSlide = currentSlide + 1
+      showSlide(currentSlide)
+    } else {
+      // currentSlide = itemsLength - (itemsLength - 1)
+      currentSlide = 1
+      showSlide(currentSlide)
+    }
+  })
 
+  function showSlide(slideNumber) {
+    $('.cards_container .item').removeClass('active')
+    $('div[data-id="' + slideNumber + '"]').addClass('active')
 
+    $('.current_slide').text(slideNumber)
+  }
 
-
-
+});

@@ -1,32 +1,111 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Form Events</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/main.js"></script>
   </head>
-
   <body>
-    <form action="">
-      <input type="text" placeholder="enter name" /><br /><br />
-      <input type="text" placeholder="enter car model" /><br><br>
+    <div class="container">
+      <div class="cardSlider">
+        <div class="wrapper">
+          <div class="action_btns">
+            <div class="btn btn_prev fa fa-arrow-circle-left"></div>
+            <div class="btn btn_next fa fa-arrow-circle-right"></div>
+            <div class="cards_container">
+              <div class="item active" data-id="1">
+                <h1>Adam Beta</h1>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <img src="https://picsum.photos/id/1/150/150" alt="" />
+                  </div>
+                  <div class="col-sm-9">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nulla consectetur reprehenderit obcaecati nam corrupti
+                    vitae, cumque voluptate. Cumque similique id atque quia
+                    maxime vitae! Nobis debitis sed nemo eligendi eius?Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Dolore
+                    voluptate nam dignissimos ducimus harum dolorem adipisci
+                    amet illum sint, labore deleniti dolor fugit voluptas
+                    distinctio, perspiciatis a odit earum fugiat!
+                  </div>
+                </div>
+              </div>
 
+              <div class="item" data-id="2">
+                <h1>Charlie Delta</h1>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <img src="https://picsum.photos/id/2/150/150" alt="" />
+                  </div>
+                  <div class="col-sm-9">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nulla consectetur reprehenderit obcaecati nam corrupti
+                    vitae, cumque voluptate. Cumque similique id atque quia
+                    maxime vitae! Nobis debitis sed nemo eligendi eius?Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Dolore
+                    voluptate nam dignissimos ducimus harum dolorem adipisci
+                    amet illum sint, labore deleniti dolor fugit voluptas
+                    distinctio, perspiciatis a odit earum fugiat!
+                  </div>
+                </div>
+              </div>
 
-      <select name="" id="" class="target">
-        <option value="option1" selected>Option1</option>
-        <option value="option2">Option2</option>
-      </select><br><br>
+              <div class="item" data-id="3">
+                <h1>Enigma Gold</h1>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <img src="https://picsum.photos/id/3/150/150" alt="" />
+                  </div>
+                  <div class="col-sm-9">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nulla consectetur reprehenderit obcaecati nam corrupti
+                    vitae, cumque voluptate. Cumque similique id atque quia
+                    maxime vitae! Nobis debitis sed nemo eligendi eius?Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Dolore
+                    voluptate nam dignissimos ducimus harum dolorem adipisci
+                    amet illum sint, labore deleniti dolor fugit voluptas
+                    distinctio, perspiciatis a odit earum fugiat!
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad assumenda vel nisi consequuntur quis. Dignissimos tempora, atque magni suscipit repellendus modi, libero dolorem, iste dolor in hic eos? Assumenda, dolore.
+                  </div>
+                </div>
+              </div>
 
-      <input type="checkbox" name="vehicle" value="bus">I have a bus <br>
-      <input type="checkbox" name="vehicle" value="car">I have a car <br><br>
-
-      <button type="submit">Submit</button>
-
-    </form>
+              <div class="count_slide">
+                Slide <span class="current_slide"></span> of
+                <span class="total_slide"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
