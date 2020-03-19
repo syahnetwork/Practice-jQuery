@@ -1,49 +1,96 @@
-body {
-  padding: 20px;
-  font-family: Roboto, arial;
+body{
+    font-family: Roboto, 'arial';
+    margin:0;
 }
 
-/*===============================
-            OVERLAY
- ================================*/
-
-.overlay-veil {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background-color: #cecece;
-  display: none;
+.hidden {
+    display:none;
+}
+.content_container .item {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: fixed;
 }
 
-.overlay-component {
-  width: 400px;
-  height: 400px;
-  background: #fff;
-  position: absolute;
-  color: #fff;
-  border-radius: 10px;
-  top: 50%;
-  left: 50%;
-  padding: 15px;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  display: none;
+.content_container .item.panel_one {
+    display:block;
 }
 
-.overlay-component .closeOverlay {
-  color: #bd2424;
-  cursor: pointer;
+.content_container .wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 180px;
 }
 
-.overlay-component h1 {
-  color: #4a4a4a;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e0e0e0;
+.start_quiz {
+    border: 1px solid #cccccc;
+    padding: 10px 20px;
+    border-radius: 40px;
+    color: #9a9a9a;
+    cursor:pointer;
+}
+.start_quiz.started {
+    background: #3f51b5;
+    color: #fff;
 }
 
-.overlay-component .ov-content {
-  color: #868686;
+
+/* PANELS */
+
+.panel_two .wrapper,
+.panel_three .wrapper,
+.panel_four .wrapper,
+.panel_five  .wrapper {
+    display:none;
+}
+
+/* SELECTABLE ELEMENTS */
+
+.options {
+    height:200px;
+}
+.options div {
+    display: none;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #3f51b5;
+    transition: all 0.2s ease;
+}
+
+.options div.active {
+    color: #007fff;
+    background: #313131;
+}
+
+.next_question {
+    cursor: pointer;
+}
+
+/* PROGRESS AND ERROR */
+
+.error {
+    position: fixed;
+    bottom: 63px;
+    width: 100%;
+    color: #F44336;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+
+.progress {
+    position: fixed;
+    bottom:0;
+    background: #d0d0d0;
+    width:100%;
+}
+
+.bar {
+    width:0%;
+    height: 25px;
+    background: #00BCD4;
 }
