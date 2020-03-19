@@ -1,46 +1,35 @@
 $(document).ready(function () {
 
-  // setTimeout(function () {
-  //   showSlide(3)
-  // }, 2000)
+  function startOverlay(id) {
+    // console.log(id)
+    $('.overlay-veil').fadeTo('500', '0.8', function () {
+      var element = $('div[data-overlayItem="' + id + '"]')
+      element.fadeIn('300')
+      element.addClass('active')
 
-  var itemsLength = $('.cards_container .item').length
-  var currentSlide = 1;
-
-  $('.total_slide').text(itemsLength);
-  $('.current_slide').text(currentSlide)
-
-
-  // console.log(itemsLength)
-
-  $('.cardSlider .btn_prev').on('click', function () {
-    // console.log('prev')
-    if (currentSlide > 1) {
-      currentSlide = currentSlide - 1;
-      showSlide(currentSlide)
-    } else {
-      currentSlide = itemsLength;
-      showSlide(currentSlide);
-    }
-  })
-
-  $('.cardSlider .btn_next').on('click', function () {
-    // console.log('next')
-    if (currentSlide !== itemsLength) {
-      currentSlide = currentSlide + 1
-      showSlide(currentSlide)
-    } else {
-      // currentSlide = itemsLength - (itemsLength - 1)
-      currentSlide = 1
-      showSlide(currentSlide)
-    }
-  })
-
-  function showSlide(slideNumber) {
-    $('.cards_container .item').removeClass('active')
-    $('div[data-id="' + slideNumber + '"]').addClass('active')
-
-    $('.current_slide').text(slideNumber)
+    })//time,opacity,do something
   }
 
+  function closeAllOverlays() {
+    $('.overlay-component').each(function () {
+      if ($(this).hasClass('active')) {
+        $('.overlay-veil').fadeOut()
+        $(this).fadeOut('300', function () {
+          $(this).removeClass('active')
+        })
+      }
+    })
+  }
+
+  $('.closeOverlay').on('click', function () {
+    closeAllOverlays()
+  })
+
+
+  $('.overlay-item-click').on('click', function (e) {
+    e.preventDefault()//clicking link not reload page
+
+    var overlayId = $(this).data('overlay')
+    startOverlay(overlayId)
+  })
 });
