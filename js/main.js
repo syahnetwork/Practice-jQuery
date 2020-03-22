@@ -27,12 +27,34 @@ var awesomeQuiz = {
       awesomeQuiz.showWrapper(next)
     })
   },
-  showWrapper:function(next){
+  showWrapper: function (next) {
     var wrapper = next.find('.wrapper')
 
-    wrapper.fadeIn('500',function(){
-
+    wrapper.fadeIn('500', function () {
+      //showing options
+      awesomeQuiz.manageOption(next)
     })
+  },
+  manageOption: function (next) {
+    var options = next.find('.options');
+    var childrens = options.find('div');
+    var counter = 0;
+
+    // console.log(childrens)
+
+    childrens.each(function (i, el) {
+      // console.log(i)
+      $(el).delay(counter).fadeIn(300) //runfast, look all at the same time
+      counter += 500;//add delay for the next option
+    })
+
+    childrens.on('click', function () {
+      childrens.removeClass('active')
+
+      next.addClass('active')//validation
+
+      $(this).addClass('active')
+    })//listen to anydiv clicks
   }
 
 
