@@ -1,37 +1,34 @@
+
 var awesomeQuiz = {
-  // setting:[],
-  // nextFunction:function(){
+  settings: {
+    results: []
+  },
   loadQuiz: function () {
-    // console.log('start quiz')
-    //start slider and changing color
-    $('.panel_one h1').show('drop', 500, function () {//after slide , changing color
-      $('.start_quiz').addClass('started', 500)//transition time
+    $('.panel_one h1').show("drop", 500, function () {
+      $('.start_quiz').addClass("started", 500)
+    });
+
+    $('.start_quiz').on('click', function () {
+      awesomeQuiz.showPanel(1);
+      awesomeQuiz.listenNext();
     })
-
-    $('.start_quiz').on('click', function () {//good to split functions
-      awesomeQuiz.showPanel(1)
-
-    })
-
   },
   showPanel: function (position) {
-    var current = $('div[data-panel="' + (position - 1) + '"]')
+    var current = $('div[data-panel="' + (position - 1) + '"]');
 
-    current.find('.wrapper').animate({ left: '-=100px', opacity: 0 }, 500, function () {
-      current.addClass('hidden')
+    current.find('.wrapper').animate({ left: "-=100px", opacity: 0 }, 500, function () {
+      current.addClass('hidden');
 
-      //show next panel
+      //show next
       var next = $('div[data-panel="' + position + '"]');
-      next.removeClass('hidden')
-
-      awesomeQuiz.showWrapper(next)
-    })
+      next.removeClass('hidden');
+      awesomeQuiz.showWrapper(next);
+    });
   },
   showWrapper: function (next) {
-    var wrapper = next.find('.wrapper')
+    var wrapper = next.find('.wrapper');
 
     wrapper.fadeIn('500', function () {
-      //showing options
       awesomeQuiz.manageOption(next)
     })
   },
@@ -40,27 +37,52 @@ var awesomeQuiz = {
     var childrens = options.find('div');
     var counter = 0;
 
-    // console.log(childrens)
-
-    childrens.each(function (i, el) {
-      // console.log(i)
-      $(el).delay(counter).fadeIn(300) //runfast, look all at the same time
-      counter += 500;//add delay for the next option
-    })
+    childrens.each(function (index, el) {
+      $(el).delay(counter).fadeIn(300);
+      counter += 500;
+    });
 
     childrens.on('click', function () {
-      childrens.removeClass('active')
+      childrens.removeClass('active');
+      next.addClass('valid');
+      $(this).addClass('active');
+    })
+  },
+  listenNext: function () {
+    $('.next_question').on("click", function () {
+      if (awesomeQuiz.validateSection($(this))) {
+        var next = $(this).data('next');
+        awesomeQuiz.showPanel(next);
+        awesomeQuiz.showProgressAndStore(next)
+      }
+    })
+  },
+  validateSection: function ($this) {
+    var parent = $this.parents().eq(1);
 
-      next.addClass('active')//validation
+    if (parent.hasClass('valid')) {
+      return true
+    } else {
+      $('.error').fadeIn('300', function () {
+        $(this).delay(1000).fadeOut('300');
+      });
+      return false
+    }
+  },
+  showProgressAndStore: function (panel) {
+    $('.progress .bar').animate({ 'width': '+=25%' }, 500);
 
-      $(this).addClass('active')
-    })//listen to anydiv clicks
+    var options = $('div[data-panel="' + (panel - 1) + '"]').find('.options');
+    options.find('div').each(function (index, el) {
+      if ($(this).hasClass('active')) {
+        awesomeQuiz.settings.results.push($(this).text());
+        console.log(awesomeQuiz.settings.results);
+      }
+    })
+
   }
-
-
 }
 
 $(document).ready(function () {
-
   awesomeQuiz.loadQuiz();
 })
